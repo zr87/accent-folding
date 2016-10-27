@@ -1,0 +1,19 @@
+{
+  "name": "accentfolding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "accentFold.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZRdesign/accent-folding.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZRdesign/accent-folding/issues"
+  },
+  "homepage": "https://github.com/ZRdesign/accent-folding#readme"
+}
