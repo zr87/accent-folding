@@ -765,3 +765,7 @@ function accentFoldedHighlight(str, fragment, wrapTag) {
     }
     return highlighted;
 }
+
+if(typeof module !== "undefined") {
+    module.exports = accentFoldedHighlight;
+}
