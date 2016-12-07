@@ -1,6 +1,7 @@
 # accent-folding
 
 It wraps string fragment in `<b>` html tag by default. 
+
 You can use custom folding tag by adding the name of your tag as third parameter (2nd example).
 
 install with npm:
