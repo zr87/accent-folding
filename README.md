@@ -1,7 +1,7 @@
 # accent-folding
 
-install with npm from github:
-<pre>npm install git+https://github.com/ZRdesign/accent-folding.git</pre>
+install with npm:
+<pre>npm install accent-folding</pre>
 
 Example code:
 <pre>
