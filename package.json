@@ -1,7 +1,7 @@
 {
   "name": "accent-folding",
-  "version": "1.0.2",
-  "description": "A small accent folding library for auto-complete",
+  "version": "1.0.3",
+  "description": "A small library for accent sensitive highlight",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
