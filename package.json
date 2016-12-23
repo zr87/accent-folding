@@ -1,6 +1,6 @@
 {
   "name": "accent-folding",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small accent folding library for auto-complete",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/ZRdesign/accent-folding.git"
   },
+  "keywords": ["accent", "folding", "highlight"],
   "author": "Zoltan Rakottyay <zoltanrakottyay@gmail.com>",
   "license": "MIT",
   "bugs": {
