@@ -13,6 +13,7 @@ npm install accent-folding
 Example code:
 
 ```js
+const accentFoldedHighlight = require('accent-folding');
 accentFoldedHighlight("Fulanilo López", "lo"); // --> "Fulani<b>lo</b> <b>Ló</b>pez"
 accentFoldedHighlight("Fulanilo López", "lo", "strong"); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
 ```
