@@ -1,8 +1,21 @@
 # accent-folding
 
-It wraps string fragment in `<b>` html tag by default. 
 
-You can use custom folding tag by adding the name of your tag as third parameter (2nd example).
+### Key Features:
+
+- Accent-insensitive matching
+- Customizable highlight wrapping (can use any HTML tag)
+- Preserves original string formatting in the output
+- Handles various Unicode characters, including fullwidth ASCII
+- wraps string fragment in `<b>` html tag by default.
+
+### Potential Use Cases:
+
+- Search functionality in applications where accents should be ignored
+- Highlighting matched terms in search results
+
+
+## Usage
 
 Install with npm:
 
@@ -10,11 +23,23 @@ Install with npm:
 npm install accent-folding
 ```
 
-Example code:
+or  with pnpm:
+
+```shell
+pnpm install accent-folding
+```
+
+### simple :
 
 ```js
-const accentFoldedHighlight = require('accent-folding');
+import AccentFolding from "accent-folder"; //import e
 
-accentFoldedHighlight("Fulanilo López", "lo"); // --> "Fulani<b>lo</b> <b>Ló</b>pez"
-accentFoldedHighlight("Fulanilo López", "lo", "strong"); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
+const af = new AccentFolding() // 
+
+af.highlightMatch("Fulanilo López", "lo"); // --> "Fulani<b>lo</b> <b>Ló</b>pez"
+```
+Using with custom html tag
+
+```js
+af.highlightMatch("Fulanilo López", "lo", "strong"); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
 ```
