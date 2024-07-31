@@ -1,1 +1,1 @@
-module.exports = require("./accentFold");
+export *  from "/src/accentFolding.js";
