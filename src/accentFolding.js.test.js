@@ -1,10 +1,11 @@
 import { expect, describe, it } from 'vitest';
 import AccentFolder from "./accentFolding.js";
+import AccentFolding from "./accentFolding.js";
 
 
-describe("AccentFolder", () => {
+describe("AccentFolding", () => {
 
-    const accentFolder = new AccentFolder()
+    const accentFolder = new AccentFolding()
 
     it("should recognize simple accents", () => {
         expect(accentFolder.highlightMatch("Fulanilo López", "lo")).toBe("Fulani<b>lo</b> <b>Ló</b>pez");
