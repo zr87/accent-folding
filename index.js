@@ -1,1 +1,1 @@
-export *  from "/src/accentFolding.js";
+export { default } from "./src/accentFolding.js";
