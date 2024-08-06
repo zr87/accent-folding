@@ -33,9 +33,9 @@ pnpm install accent-folding
 ### simple :
 
 ```js
-import AccentFolding from "accent-folder"; //import e
+import AccentFolding from 'accent-folding';
 
-const af = new AccentFolding() // 
+const af = new AccentFolding()
 
 af.highlightMatch("Fulanilo López", "lo"); // --> "Fulani<b>lo</b> <b>Ló</b>pez"
 ```
