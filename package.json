@@ -19,12 +19,12 @@
     "folding",
     "highlight"
   ],
-  "author": "Zoltan Rakottyay <zoltanrakottyay@gmail.com>",
+  "author": "Zoltan Rakottyai <zoltanrakottyai@pm.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ZRdesign/accent-folding/issues"
+    "url": "https://github.com/zr87/accent-folding"
   },
-  "homepage": "https://github.com/ZRdesign/accent-folding#readme",
+  "homepage": "https://github.com/zr87/accent-folding#readme",
   "devDependencies": {
     "vitest": "^2.0.5"
   }
