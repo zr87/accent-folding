@@ -1,5 +1,8 @@
 # accent-folding
 
+---
+
+## Description
 A case-insensitive accent folding function that replaces accented characters with their unaccented equivalents
 
 ### Key Features:
@@ -30,7 +33,11 @@ or  with pnpm:
 pnpm install accent-folding
 ```
 
-### simple :
+```shell
+yarn add accent-folding
+```
+
+Simple use-case
 
 ```js
 import AccentFolding from 'accent-folding';
@@ -45,8 +52,12 @@ Using with custom html tag
 af.highlightMatch("Fulanilo López", "lo", "strong"); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
 ```
 
+## Requirements
 
-# Legacy usage (v1)
+Node.js version 14.7 or higher
+
+
+## Legacy usage (v1)
 
 Install with npm:
 ```
@@ -62,3 +73,9 @@ accentFoldedHighlight("Fulanilo López", "lo"); // --> "Fulani<b>lo</b> <b>Ló</
 accentFoldedHighlight("Fulanilo López", "lo", "strong"); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
 
 ```
+
+## Roadmap
+See the [Roadmap](./ROADMAP.md "View the project roadmap") for planned features and future improvements.
+
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
