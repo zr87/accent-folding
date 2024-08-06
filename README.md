@@ -1,5 +1,6 @@
 # accent-folding
 
+A case-insensitive accent folding function that replaces accented characters with their unaccented equivalents
 
 ### Key Features:
 
@@ -42,4 +43,22 @@ Using with custom html tag
 
 ```js
 af.highlightMatch("Fulanilo López", "lo", "strong"); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
+```
+
+
+# Legacy usage (v1)
+
+Install with npm:
+```
+npm install accent-folding@1
+```
+
+Example:
+```js
+
+const accentFoldedHighlight = require('accent-folding');
+
+accentFoldedHighlight("Fulanilo López", "lo"); // --> "Fulani<b>lo</b> <b>Ló</b>pez"
+accentFoldedHighlight("Fulanilo López", "lo", "strong"); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
+
 ```
