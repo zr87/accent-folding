@@ -4,29 +4,38 @@
 name: Release Package
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
+      - next
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 9
           run_install: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-          registry-url: https://registry.npmjs.org
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Publish 🚀
-        shell: bash
-        run: pnpm publish --access public --no-git-checks
+      - run: npm audit signatures
+      - name: Release 🚀
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: pnpm run semantic-release
+
