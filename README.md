@@ -1,6 +1,4 @@
-# accent-folding
-
----
+# accent-folding [![Coverage Status](https://coveralls.io/repos/github/zr87/accent-folding/badge.svg?branch=main)](https://coveralls.io/github/zr87/accent-folding?branch=main)
 
 ## Description
 A case-insensitive accent folding function that replaces accented characters with their unaccented equivalents
@@ -32,7 +30,7 @@ or  with pnpm:
 ```shell
 pnpm install accent-folding
 ```
-
+or even  with yarn:
 ```shell
 yarn add accent-folding
 ```
