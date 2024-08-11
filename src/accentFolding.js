@@ -20,6 +20,10 @@ class AccentFolding {
 		return ret;
 	}
 
+	replace(text) {
+		return [...text].map((char) => this.#accentMap.get(char) || char).join('');
+	}
+
 	highlightMatch(str, fragment, wrapTag = 'b') {
 		if (!fragment) return str;
 
