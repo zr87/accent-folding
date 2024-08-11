@@ -8,10 +8,11 @@
   },
   "type": "module",
   "scripts": {
-    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,9 @@
   },
   "homepage": "https://github.com/zr87/accent-folding#readme",
   "devDependencies": {
+    "@vitest/coverage-v8": "^2.0.5",
     "eslint": "^9.9.0",
+    "install": "^0.13.0",
     "semantic-release": "^24.0.0",
     "vitest": "^2.0.5"
   }
