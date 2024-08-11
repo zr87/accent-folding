@@ -1,6 +1,4 @@
-# accent-folding
-
----
+# accent-folding [![Coverage Status](https://coveralls.io/repos/github/zr87/accent-folding/badge.svg?branch=main)](https://coveralls.io/github/zr87/accent-folding?branch=main)
 
 ## Description
 
@@ -33,6 +31,7 @@ or with pnpm:
 pnpm install accent-folding
 ```
 
+or even  with yarn:
 ```shell
 yarn add accent-folding
 ```
