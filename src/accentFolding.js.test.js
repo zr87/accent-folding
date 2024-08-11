@@ -1,12 +1,40 @@
-import { expect, describe, it } from 'vitest';
+import { expect, describe, it, beforeEach } from 'vitest';
 import AccentFolding from "./accentFolding.js";
 
 
 describe("AccentFolding", () => {
 
-    const accentFolder = new AccentFolding()
+	let accentFolder;
+
+	beforeEach(() => {
+		accentFolder = new AccentFolding();
+	});
+
+	describe('constructor', () => {
+		it('should throw TypeError if customMap is not an array', () => {
+			expect(() => new AccentFolding('not an array')).toThrow(TypeError);
+			expect(() => new AccentFolding('not an array')).toThrow('customMap must be an array');
+		});
+	});
 
 	describe('highlightMatch', () => {
+
+		it('should throw TypeError if str is not a string', () => {
+			expect(() => accentFolder.highlightMatch(123, 'test')).toThrow(TypeError);
+			expect(() => accentFolder.highlightMatch(123, 'test')).toThrow('Both str and fragment must be strings');
+		});
+
+		it('should throw TypeError if fragment is not a string', () => {
+			expect(() => accentFolder.highlightMatch('test', 123  )).toThrow(TypeError);
+			expect(() => accentFolder.highlightMatch('test', 123)).toThrow('Both str and fragment must be strings');
+		});
+
+		it('should throw TypeError if wrapTag is not a string', () => {
+			expect(() => accentFolder.highlightMatch('test', 'es', 123)).toThrow(TypeError);
+			expect(() => accentFolder.highlightMatch('test', 'es', 123)).toThrow('wrapTag must be a string');
+		});
+
+
 		it("should recognize simple accents", () => {
 			expect(accentFolder.highlightMatch("Fulanilo López", "lo")).toBe("Fulani<b>lo</b> <b>Ló</b>pez");
 			expect(accentFolder.highlightMatch("Erik Lørgensen", "lo")).toBe("Erik <b>Lø</b>rgensen");
@@ -65,6 +93,11 @@ describe("AccentFolding", () => {
 
 		it('should handle empty string', () => {
 		 expect(accentFolder.replace('')).toBe('')
+		});
+
+		it('should throw TypeError if input is not a string', () => {
+			expect(() => accentFolder.replace(123)).toThrow(TypeError);
+			expect(() => accentFolder.replace(123)).toThrow('Input must be a string');
 		});
 	})
 });
