@@ -1,52 +1,58 @@
-import defaultAccentMap from "./accentMap.js"
-
+import defaultAccentMap from "./accentMap.js";
 
 class AccentFolding {
-    #cache;
-    #accentMap;
+	#cache;
+	#accentMap;
 
-    constructor(customMap = []) {
+	constructor(customMap = []) {
 		if (!Array.isArray(customMap)) {
-			throw new TypeError('customMap must be an array');
+			throw new TypeError("customMap must be an array");
 		}
-        this.#accentMap = new Map([...defaultAccentMap, ...customMap]);
-        this.#cache = new Map();
-    }
-
-    #fold(s) {
-        if (!s) return "";
-        if (this.#cache.has(s)) return this.#cache.get(s);
-
-        const ret = [...s].map(char => this.#accentMap.get(char) || char).join('');
-        this.#cache.set(s, ret);
-        return ret;
-    }
-
-	replace(text) {
-		if (typeof text !== 'string') {
-			throw new TypeError('Input must be a string');
-		}
-		return [...text].map(char => this.#accentMap.get(char) || char).join('');
+		this.#accentMap = new Map([...defaultAccentMap, ...customMap]);
+		this.#cache = new Map();
 	}
 
-    highlightMatch(str, fragment, wrapTag = 'b') {
+	#fold(s) {
+		if (!s) return "";
+		if (this.#cache.has(s)) return this.#cache.get(s);
+
+		const ret = [...s]
+			.map((char) => this.#accentMap.get(char) || char)
+			.join("");
+		this.#cache.set(s, ret);
+		return ret;
+	}
+
+	replace(text) {
+		if (typeof text !== "string") {
+			throw new TypeError("Input must be a string");
+		}
+		return [...text]
+			.map((char) => this.#accentMap.get(char) || char)
+			.join("");
+	}
+
+	highlightMatch(str, fragment, wrapTag = "b") {
 		try {
 			if (!fragment) return str;
 
-			if (typeof str !== 'string' || typeof fragment !== 'string') {
-				throw new TypeError('Both str and fragment must be strings');
+			if (typeof str !== "string" || typeof fragment !== "string") {
+				throw new TypeError("Both str and fragment must be strings");
 			}
 
-			if (typeof wrapTag !== 'string') {
-				throw new TypeError('wrapTag must be a string');
+			if (typeof wrapTag !== "string") {
+				throw new TypeError("wrapTag must be a string");
 			}
 
-			const escapedFragment = fragment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+			const escapedFragment = fragment.replace(
+				/[.*+?^${}()|[\]\\]/g,
+				"\\$&",
+			);
 			const strFolded = this.#fold(str).toLowerCase();
 			const fragmentFolded = this.#fold(escapedFragment).toLowerCase();
 
-			const re = new RegExp(fragmentFolded, 'g');
-			let result = '';
+			const re = new RegExp(fragmentFolded, "g");
+			let result = "";
 			let lastIndex = 0;
 			let hasMatch = false;
 
@@ -61,21 +67,19 @@ class AccentFolding {
 
 			return hasMatch ? result : str;
 		} catch (error) {
-			console.error('Error in highlightMatch:', error.message);
+			console.error("Error in highlightMatch:", error.message);
 			throw error; // Return original string if there's an error
 		}
-    }
+	}
 
-
-
-    #escapeHtml(unsafe) {
-        return unsafe
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
+	#escapeHtml(unsafe) {
+		return unsafe
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#039;");
+	}
 }
 
 export default AccentFolding;
