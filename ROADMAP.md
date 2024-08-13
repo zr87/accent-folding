@@ -9,7 +9,7 @@
 
 -   [x] Add code quality tools like ESlint, coverage reporting, EditorConfig
 -   [x] add `replace` method for replacing accents with it's unaccented equivalents without wrapping
--   [ ] Add Prettier
+-   [x] Add Prettier
 -   [ ] Update readme: how to use the new `replace` method
 
 ## Future Plans
