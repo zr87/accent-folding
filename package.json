@@ -8,10 +8,11 @@
   },
   "type": "module",
   "scripts": {
-    "test": "vitest",
+    "format": "npx prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "@eslint/js": "^9.9.0",
     "eslint": "^9.9.0",
     "globals": "^15.9.0",
+    "prettier": "3.3.3",
     "semantic-release": "^24.1.0",
     "vitest": "^2.0.5"
   }
