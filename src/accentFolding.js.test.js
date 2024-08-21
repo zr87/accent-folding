@@ -1,5 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import AccentFolding from './accentFolding.js';
+import accentMap from './accentMap.json';
 
 describe('AccentFolding', () => {
 	const accentFolder = new AccentFolding();
@@ -62,6 +63,12 @@ describe('AccentFolding', () => {
 	});
 
 	describe('replace', () => {
+		it.each(Object.entries(accentMap))(
+			'should replace %s with %s',
+			(accentedChar, expectedChar) => {
+				expect(accentFolder.replace(accentedChar)).toBe(expectedChar);
+			}
+		);
 		it('should recognize simple accents', () => {
 			expect(accentFolder.replace('naïve')).toBe('naive');
 		});
