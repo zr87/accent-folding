@@ -31,7 +31,8 @@ or with pnpm:
 pnpm install accent-folding
 ```
 
-or even  with yarn:
+or even with yarn:
+
 ```shell
 yarn add accent-folding
 ```
