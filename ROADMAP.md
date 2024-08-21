@@ -5,8 +5,13 @@
 - [x] Improvement: Enhancing performance, rewrite using ES6
 - [x] Documentation: Detailed examples and use cases.
 
-## Future Plans
+## What's `next`
+- [x] chore: Add code quality tools like ESlint, EditorConfig & Prettier
+- [x] add `replace` method for replacing accents with it's unaccented equivalents without wrapping
+- [x] Add coverage reporting
 
-- [ ] Feature 3: add TypeScript support
-- [ ] Feature 4: replace accent with it's unaccented equivalent without wrapping
-- [ ] Feature 5: Add support for CommonJS
+## Future Plans
+- [ ] Add TypeScript support
+- [ ] Add support for CommonJS
+
+
