@@ -4,10 +4,9 @@ class AccentFolding {
 	#cache;
 	#accentMap;
 
-	constructor(customMap = []) {
+	constructor() {
 		this.#accentMap = new Map([
 			...AccentFolding.convertAccentMapToArray(defaultAccentMap),
-			...customMap,
 		]);
 		this.#cache = new Map();
 	}
