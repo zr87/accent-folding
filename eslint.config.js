@@ -1,27 +1,24 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 
 export default [
 	{
 		languageOptions: {
-			globals: {...globals.browser, ...globals.node},
+			globals: { ...globals.browser, ...globals.node },
 			parserOptions: {
 				ecmaVersion: 'latest',
-				sourceType: "module",
+				sourceType: 'module',
 			},
 		},
-
-
 	},
 	pluginJs.configs.recommended,
 	{
 		rules: {
-			"no-unused-vars": "warn",
-			"no-undef": "warn"
+			'no-unused-vars': 'warn',
+			'no-undef': 'warn',
 		},
 	},
 	{
-		ignores: ['dist/', '.idea', 'coverage/']
+		ignores: ['dist/', '.idea', 'coverage/'],
 	},
 ];

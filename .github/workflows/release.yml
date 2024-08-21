@@ -27,14 +27,13 @@ jobs:
           run_install: false
       - uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - run: npm audit signatures
       - name: Release 🚀
         env:
-            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-            NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
         run: pnpm run semantic-release
-
