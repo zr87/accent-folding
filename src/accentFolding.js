@@ -1,16 +1,12 @@
 import defaultAccentMap from './accentMap.json';
 
-function convertAccentMapToArray(accentMap) {
-	return Object.entries(accentMap);
-}
-
 class AccentFolding {
 	#cache;
 	#accentMap;
 
 	constructor(customMap = []) {
 		this.#accentMap = new Map([
-			...convertAccentMapToArray(defaultAccentMap),
+			...AccentFolding.convertAccentMapToArray(defaultAccentMap),
 			...customMap,
 		]);
 		this.#cache = new Map();
@@ -62,6 +58,10 @@ class AccentFolding {
 			.replace(/>/g, '&gt;')
 			.replace(/"/g, '&quot;')
 			.replace(/'/g, '&#039;');
+	}
+
+	static convertAccentMapToArray(accentMap) {
+		return Object.entries(accentMap);
 	}
 }
 
