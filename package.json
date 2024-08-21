@@ -30,7 +30,7 @@
   "homepage": "https://github.com/zr87/accent-folding#readme",
   "devDependencies": {
     "eslint": "^9.9.0",
-    "semantic-release": "^24.0.0",
+    "semantic-release": "^24.1.0",
     "vitest": "^2.0.5"
   }
 }
