@@ -8,6 +8,7 @@
   },
   "type": "module",
   "scripts": {
+    "coverage": "vitest run --coverage",
     "format": "npx prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
