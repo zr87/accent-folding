@@ -37,7 +37,23 @@ or even with yarn:
 yarn add accent-folding
 ```
 
-Simple use-case
+## Public Methods
+
+### `replace`
+
+Replaces accented characters in a string with their unaccented equivalents.
+
+```js
+import AccentFolding from 'accent-folding';
+
+const af = new AccentFolding();
+
+af.replace('Fulanilo López'); // --> "Fulanilo Lopez"
+```
+
+### `highlightMatch`
+
+Highlights matched terms in a string, ignoring accents.
 
 ```js
 import AccentFolding from 'accent-folding';
@@ -47,7 +63,7 @@ const af = new AccentFolding();
 af.highlightMatch('Fulanilo López', 'lo'); // --> "Fulani<b>lo</b> <b>Ló</b>pez"
 ```
 
-Using with custom html tag
+Use the 3d argument to specify the wrapping html tag (strong, em, span etc.):
 
 ```js
 af.highlightMatch('Fulanilo López', 'lo', 'strong'); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
