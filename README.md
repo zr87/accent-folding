@@ -75,6 +75,25 @@ Use the 3d argument to specify the wrapping html tag (strong, em, span etc.):
 af.highlightMatch('Fulanilo López', 'lo', 'strong'); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
 ```
 
+
+## Extending and Overriding the Accent Map
+
+The `AccentFolding` class allows you to extend or override the default accent map by providing a custom map to the constructor.
+
+### Extending the Accent Map
+
+To extend the accent map with new mappings, pass an object with the new mappings to the constructor. For example:
+
+```js
+import AccentFolding from './accentFolding.js';
+
+const customAccentMap = { 'ö': 'oe', '✝': 't' };
+const accentFolder = new AccentFolding(customAccentMap);
+
+console.log(accentFolder.replace('Föhn')); // Outputs: Foehn
+console.log(accentFolder.replace('✝illa')); // Outputs: tilla
+```
+
 ## Requirements
 
 Node.js version 14.7 or higher

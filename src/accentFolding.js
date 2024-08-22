@@ -4,11 +4,17 @@ class AccentFolding {
 	#cache;
 	#accentMap;
 
-	constructor() {
+	constructor(newMap = null) {
+		if (newMap !== null && typeof newMap !== 'object') {
+			throw new TypeError('newMap must be an object');
+		}
 		this.#accentMap = new Map([
 			...AccentFolding.convertAccentMapToArray(defaultAccentMap),
 		]);
 		this.#cache = new Map();
+		if (newMap) {
+			this.#extendAccentMap(newMap);
+		}
 	}
 
 	#fold(s) {
@@ -77,6 +83,13 @@ class AccentFolding {
 
 	static convertAccentMapToArray(accentMap) {
 		return Object.entries(accentMap);
+	}
+
+	#extendAccentMap(newMap) {
+		for (const [key, value] of Object.entries(newMap)) {
+			this.#accentMap.set(key, value);
+		}
+		this.#cache.clear(); // Clear cache to ensure new mappings are used
 	}
 }
 
