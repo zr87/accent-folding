@@ -1,4 +1,4 @@
-# accent-folding [![Coverage Status](https://coveralls.io/repos/github/zr87/accent-folding/badge.svg?branch=main)](https://coveralls.io/github/zr87/accent-folding?branch=main)
+# accent-folding ![GitHub package.json version](https://img.shields.io/github/package-json/v/zr87/accent-folding) [![Coverage Status](https://coveralls.io/repos/github/zr87/accent-folding/badge.svg?branch=main)](https://coveralls.io/github/zr87/accent-folding?branch=main) 
 
 ## Description
 
