@@ -32,6 +32,7 @@
   "homepage": "https://github.com/zr87/accent-folding#readme",
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@vitest/coverage-v8": "^2.0.5",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.9.0",
@@ -39,8 +40,5 @@
     "prettier": "3.3.3",
     "semantic-release": "^24.1.0",
     "vitest": "^2.0.5"
-  },
-  "dependencies": {
-    "@vitest/coverage-v8": "^2.0.5"
   }
 }
