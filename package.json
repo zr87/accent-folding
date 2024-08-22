@@ -1,7 +1,7 @@
 {
   "name": "accent-folding",
-  "version": "2.0.0",
-  "description": "A small library for accent sensitive highlight",
+  "version": "2.2.0",
+  "description": "A JavaScript library for accent-insensitive text processing, including accent folding and search term highlighting",
   "main": "index.js",
   "engines": {
     "node": ">=14.17.0"
@@ -20,14 +20,21 @@
     "url": "git+https://github.com/zr87/accent-folding.git"
   },
   "keywords": [
-    "accent",
-    "folding",
-    "highlight"
+    "accent folding",
+    "accent insensitive",
+    "Unicode normalization",
+    "text processing",
+    "string manipulation",
+    "search highlight",
+    "JavaScript library",
+    "npm package",
+    "text normalization",
+    "accent removal"
   ],
   "author": "Zoltan Rakottyai <zoltanrakottyai@pm.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zr87/accent-folding"
+    "url": "https://github.com/zr87/accent-folding/issues"
   },
   "homepage": "https://github.com/zr87/accent-folding#readme",
   "devDependencies": {
