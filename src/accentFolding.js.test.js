@@ -120,4 +120,26 @@ describe('AccentFolding', () => {
 			expect(accentFolder.replace('')).toBe('');
 		});
 	});
+
+	describe('constructor', () => {
+		it('should initialize with default accent map', () => {
+			expect(accentFolder.replace('á')).toBe('a');
+		});
+
+		it('should extend the accent map with new mappings if provided', () => {
+			const customAccentFolder = new AccentFolding({ ö: 'oe', '✝': 't' });
+			expect(customAccentFolder.replace('Föhn')).toBe('Foehn');
+			expect(customAccentFolder.replace('✝illa')).toBe('tilla');
+		});
+
+		it('should override existing mappings if provided', () => {
+			const customAccentFolder = new AccentFolding({ á: 'aa' });
+			expect(customAccentFolder.replace('á')).toBe('aa');
+		});
+
+		it('should throw TypeError if newMap is not an object', () => {
+			expect(() => new AccentFolding(123)).toThrow(TypeError);
+			expect(() => new AccentFolding(123)).toThrow('newMap must be an object');
+		});
+	});
 });
