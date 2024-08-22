@@ -2,10 +2,8 @@
 
 ## Description
 
-A case-insensitive accent folding functions to replace accented characters with their unaccented equivalents 
+A case-insensitive accent folding functions to replace accented characters with their unaccented equivalents
 or hightlight matched terms in a string, ignoring accents.
-
-
 
 ## Installation
 
@@ -21,7 +19,8 @@ or with pnpm:
 pnpm install accent-folding
 ```
 
-or even  with yarn:
+or even with yarn:
+
 ```shell
 yarn add accent-folding
 ```
@@ -29,12 +28,13 @@ yarn add accent-folding
 ## Public Methods
 
 ### `replace`
+
 Replaces accented characters in a string with their unaccented equivalents.
 
 #### Key Features:
- - Handles various Unicode characters, including fullwidth ASCII
- - Preserves original string formatting in the output
 
+- Handles various Unicode characters, including fullwidth ASCII
+- Preserves original string formatting in the output
 
 ```js
 import AccentFolding from 'accent-folding';
@@ -45,6 +45,7 @@ af.replace('Fulanilo López'); // --> "Fulanilo Lopez"
 ```
 
 ### `highlightMatch`
+
 Highlights matched terms in a string, ignoring accents.
 
 #### Key Features:
@@ -59,7 +60,6 @@ Highlights matched terms in a string, ignoring accents.
 
 - Search functionality in applications where accents should be ignored
 - Highlighting matched terms in search results
-
 
 ```js
 import AccentFolding from 'accent-folding';
