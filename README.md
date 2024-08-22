@@ -2,22 +2,12 @@
 
 ## Description
 
-A case-insensitive accent folding function that replaces accented characters with their unaccented equivalents
+A case-insensitive accent folding functions to replace accented characters with their unaccented equivalents 
+or hightlight matched terms in a string, ignoring accents.
 
-### Key Features:
 
-- Accent-insensitive matching
-- Customizable highlight wrapping (can use any HTML tag)
-- Preserves original string formatting in the output
-- Handles various Unicode characters, including fullwidth ASCII
-- wraps string fragment in `<b>` html tag by default.
 
-### Potential Use Cases:
-
-- Search functionality in applications where accents should be ignored
-- Highlighting matched terms in search results
-
-## Usage
+## Installation
 
 Install with npm:
 
@@ -40,8 +30,12 @@ yarn add accent-folding
 ## Public Methods
 
 ### `replace`
-
 Replaces accented characters in a string with their unaccented equivalents.
+
+#### Key Features:
+ - Handles various Unicode characters, including fullwidth ASCII
+ - Preserves original string formatting in the output
+
 
 ```js
 import AccentFolding from 'accent-folding';
@@ -52,8 +46,21 @@ af.replace('Fulanilo López'); // --> "Fulanilo Lopez"
 ```
 
 ### `highlightMatch`
-
 Highlights matched terms in a string, ignoring accents.
+
+#### Key Features:
+
+- Accent-insensitive matching
+- Customizable highlight wrapping (can use any HTML tag)
+- Preserves original string formatting in the output
+- Handles various Unicode characters, including fullwidth ASCII
+- wraps string fragment in `<b>` html tag by default.
+
+#### Potential Use Cases:
+
+- Search functionality in applications where accents should be ignored
+- Highlighting matched terms in search results
+
 
 ```js
 import AccentFolding from 'accent-folding';
