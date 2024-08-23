@@ -1,4 +1,4 @@
-# accent-folding ![GitHub package.json version](https://img.shields.io/github/package-json/v/zr87/accent-folding) [![Coverage Status](https://coveralls.io/repos/github/zr87/accent-folding/badge.svg?branch=main)](https://coveralls.io/github/zr87/accent-folding?branch=main) 
+# accent-folding ![GitHub package.json version](https://img.shields.io/github/package-json/v/zr87/accent-folding) [![Coverage Status](https://coveralls.io/repos/github/zr87/accent-folding/badge.svg?branch=main)](https://coveralls.io/github/zr87/accent-folding?branch=main)
 
 ## Description
 
@@ -75,7 +75,6 @@ Use the 3d argument to specify the wrapping html tag (strong, em, span etc.):
 af.highlightMatch('Fulanilo López', 'lo', 'strong'); // --> "Fulani<strong>lo</strong> <strong>Ló</strong>pez"
 ```
 
-
 ## Extending and Overriding the Accent Map
 
 The `AccentFolding` class allows you to extend or override the default accent map by providing a custom map to the constructor.
@@ -85,7 +84,7 @@ The `AccentFolding` class allows you to extend or override the default accent ma
 To extend the accent map with new mappings, pass an object with the new mappings to the constructor. For example:
 
 ```js
-import AccentFolding from './accentFolding.js';
+import AccentFolding from 'accent-folding';
 
 const customAccentMap = { 'ö': 'oe', '✝': 't' };
 const accentFolder = new AccentFolding(customAccentMap);
