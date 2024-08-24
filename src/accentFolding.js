@@ -1,4 +1,4 @@
-import defaultAccentMap from './accentMap.json';
+import defaultAccentMap from './accentMap.json' assert { type: 'json' };
 
 class AccentFolding {
 	#cache;
